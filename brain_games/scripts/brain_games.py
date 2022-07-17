@@ -1,16 +1,10 @@
 #!/usr/bin/env python
-import prompt
-
-
-def get_name():
-    name = prompt.string("May I have your name? ")
-    print(f"Hello, {name}!")
-    return name
+from ..cli import welcome_user
 
 
 def main():
     print("Welcome to the Brain Games!")
-    get_name()
+    welcome_user()
 
 
 if __name__ == "__main__":
