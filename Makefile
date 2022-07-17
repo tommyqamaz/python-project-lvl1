@@ -1,6 +1,9 @@
 install:
 	poetry install
 
+check:
+	poetry run black .
+
 brain-games:
 	poetry run brain-games
 
