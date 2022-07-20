@@ -2,21 +2,22 @@
 
 from random import randint
 from ..cli import welcome_user
+from time import sleep
 
 
-def start_game(user_name: str):
+def start_game(user_name: str, limit: int = 3):
     """Mini game where you try to guess the even number."""
 
-    limit = 3
     print('Answer "yes" if the number is even, otherwise answer "no".')
+
     while limit:
         generated_number = randint(0, 100)
 
         print(f"Question: {generated_number}")
-
+        sleep(1)
         right_anser = ["yes", "no"][generated_number % 2]
         users_answer = input()
-
+        sleep(0.5)
         print(f"Your answer: {users_answer}")
         if users_answer == right_anser:
             print("Correct!")
@@ -28,7 +29,7 @@ def start_game(user_name: str):
                 f"'{users_answer}' is wrong answer ;(. Correct answer was '{right_anser}'."
             )
             print(f"Let's try again, {user_name}!")
-            break
+            limit = 0
 
 
 def main():
