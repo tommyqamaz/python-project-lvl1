@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-from ..cli import welcome_user
+from ..cli import get_user_name
 
 
 def main():
     """Main part."""
     print("Welcome to the Brain Games!")
-    welcome_user()
+    get_user_name()
 
 
 if __name__ == "__main__":

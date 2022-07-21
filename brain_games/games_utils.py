@@ -2,10 +2,10 @@ from typing import Any
 from typing import Callable
 
 
-def check_answer(users_answer: Any, right_answer: Any, user_name: str) -> bool:
+def check_answer(users_answer: str, right_answer: str, user_name: str) -> bool:
     """Check answer for games programms."""
     print(f"Your answer: {users_answer}")
-    if users_answer == right_answer:
+    if str(users_answer) == str(right_answer):
         print("Correct!")
         return True
     else:
