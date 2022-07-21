@@ -2,7 +2,7 @@
 
 from random import randint
 from ..cli import welcome_user
-from time import sleep
+from ..check_answer import check_answer
 
 
 def start_game(user_name: str, limit: int = 3):
@@ -14,22 +14,16 @@ def start_game(user_name: str, limit: int = 3):
         generated_number = randint(0, 100)
 
         print(f"Question: {generated_number}")
-        sleep(1)
-        right_anser = ["yes", "no"][generated_number % 2]
+        right_answer = ["yes", "no"][generated_number % 2]
         users_answer = input()
-        sleep(0.5)
-        print(f"Your answer: {users_answer}")
-        if users_answer == right_anser:
-            print("Correct!")
+        result = check_answer(users_answer, right_answer, user_name)
+        if result:
             limit -= 1
-            if limit == 0:
-                print(f"Congratulations, {user_name}!")
         else:
-            print(
-                f"'{users_answer}' is wrong answer ;(. Correct answer was '{right_anser}'."
-            )
-            print(f"Let's try again, {user_name}!")
-            limit = 0
+            break
+
+    if result:
+        print(f"Congratulations, {user_name}!")
 
 
 def main():
