@@ -30,7 +30,9 @@ def calculator() -> Tuple:
 
 def gcd() -> Tuple:
     """Generates two random numbers for great common divisor question"""
-    num1, num2 = randint(0, 55), randint(0, 55)
-    answer = math.gcd(num1, num2)
-    question = f"{num1} {num2}"
-    return question, answer
+    while True:
+        num1, num2 = randint(0, 100), randint(0, 100)
+        answer = math.gcd(num1, num2)
+        question = f"{num1} {num2}"
+        if answer != 1 and num1 != num2:
+            return question, answer
