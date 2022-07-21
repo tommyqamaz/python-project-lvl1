@@ -1,6 +1,6 @@
-from random import randint
-from random import choice
+from random import randint, choice
 from typing import Tuple
+import math
 
 
 def brain_even() -> Tuple:
@@ -25,4 +25,12 @@ def calculator() -> Tuple:
     action = choice(["+", "-", "*"])
     answer = ACTIONS[action](num1, num2)
     question = f"{num1} {action} {num2}"
+    return question, answer
+
+
+def gcd() -> Tuple:
+    """Generates two random numbers for great common divisor question"""
+    num1, num2 = randint(0, 55), randint(0, 55)
+    answer = math.gcd(num1, num2)
+    question = f"{num1} {num2}"
     return question, answer
