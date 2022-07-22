@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from ..cli import get_user_name
 from ..games_utils import start_game
 from ..games import progression

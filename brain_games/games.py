@@ -50,17 +50,18 @@ def progression():
     return question, answer
 
 
+def _is_prime(n):
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if (n % i) == 0:
+            return False
+    return True
+
+
 def prime():
     MAX_NUM = 228
 
-    def is_prime(n):
-        for i in range(2, int(math.sqrt(n)) + 1):
-            if (n % i) == 0:
-                return False
-        return True
-
     number = randint(0, MAX_NUM)
     question = number
-    answer = "yes" if is_prime(number) else "no"
+    answer = "yes" if _is_prime(number) else "no"
 
     return question, answer
