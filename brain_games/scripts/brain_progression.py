@@ -1,14 +1,11 @@
 #!/usr/bin/env python
 
-from ..cli import get_user_name
-from ..games_utils import start_game
+from ..games_utils import game_template
 from ..games import progression
 
 
 def main():
-    users_name = get_user_name()
-    start_game(
-        users_name,
+    game_template(
         progression,
         description="What number is missing in the progression?",
     )

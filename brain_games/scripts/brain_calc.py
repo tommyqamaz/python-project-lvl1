@@ -1,13 +1,11 @@
 #!/usr/bin/env python
 
-from ..cli import get_user_name
-from ..games_utils import start_game
+from ..games_utils import game_template
 from ..games import calculator
 
 
 def main():
-    users_name = get_user_name()
-    start_game(users_name, calculator)
+    game_template(calculator)
 
 
 if __name__ == "__main__":

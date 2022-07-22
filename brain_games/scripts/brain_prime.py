@@ -10,7 +10,7 @@ def main():
     start_game(
         users_name,
         prime,
-        description='Answer "yes" if given number is prime. Otherwise answer "no".',
+        'Answer "yes" if given number is prime. Otherwise answer "no".',
     )
 
 
