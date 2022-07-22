@@ -36,3 +36,15 @@ def gcd() -> Tuple:
         question = f"{num1} {num2}"
         if answer != 1 and num1 != num2:
             return question, answer
+
+
+def progression():
+    a0 = randint(1, 13)  # first term
+    d = randint(2, 6)  # common difference
+    n = randint(5, 10)  # lenth of sequence
+    prog = [a0 + d * i for i in range(n)]
+    random_symbol = str(choice(prog))
+    prog = " ".join(map(str, prog))
+    question = prog.replace(random_symbol, "..", 1)
+    answer = random_symbol
+    return question, answer
