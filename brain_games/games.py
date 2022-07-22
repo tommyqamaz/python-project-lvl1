@@ -48,3 +48,19 @@ def progression():
     question = prog.replace(random_symbol, "..", 1)
     answer = random_symbol
     return question, answer
+
+
+def prime():
+    MAX_NUM = 228
+
+    def is_prime(n):
+        for i in range(2, int(math.sqrt(n)) + 1):
+            if (n % i) == 0:
+                return False
+        return True
+
+    number = randint(0, MAX_NUM)
+    question = number
+    answer = "yes" if is_prime(number) else "no"
+
+    return question, answer
