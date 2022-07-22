@@ -56,6 +56,6 @@ def start_game(
         print(f"Congratulations, {user_name}!")
 
 
-def game_template(game, desc=None):
+def game_template(game, description=None):
     users_name = get_user_name()
-    start_game(users_name, game, desc)
+    start_game(users_name, game, description)
